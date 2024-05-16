@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    environment:
+      - OPENAI_API_KEY=
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    stdin_open: true  # Keep stdin open
+    tty: true          # Allocate a pseudo-TTY (like when you run -it in docker run)
