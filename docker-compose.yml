@@ -11,3 +11,5 @@ services:
       - .:/app
     stdin_open: true  # Keep stdin open
     tty: true          # Allocate a pseudo-TTY (like when you run -it in docker run)
+    restart: always
+    container_name: chatdev_container
