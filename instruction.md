@@ -58,16 +58,13 @@ working------ test log command
 docker exec -d chatdev-main-app-1 python run.py --task "ls -al" > /app/logs/weather-app.log 2>&1
 
 working------ to setup log folder
-docker exec chatdev-main-app-1 sh -c 'mkdir -p /app/logs && chmod 777 /app/logs'
+docker exec chatdev_container sh -c 'mkdir -p /app/logs && chmod 777 /app/logs'
 
 working------ to create a project
-docker exec -d chatdev-main-app-1 sh -c 'mkdir -p /app/logs && python run.py --task "make a kids game app" --name "kids-game-app2" > /app/logs/kids-game-app2.log 2>&1'
+docker exec -d chatdev_container sh -c 'mkdir -p /app/logs && python run.py --task "make a kids game app" --name "kids-game-app2" > /app/logs/kids-game-app2.log 2>&1'
 
 working------ to update a project
-docker exec -d chatdev-main-app-1 sh -c 'mkdir -p /app/logs && python run.py --task "change color of submit button to red" --config "incremental" --path "./WareHouse/BMI Calculator_DefaultOrganization_20230918110521" > /app/logs/task-output.log 2>&1'
-
-
-
+docker exec -d chatdev_container sh -c 'mkdir -p /app/logs && python run.py --task "change color of submit button to red" --config "incremental" --path "./WareHouse/BMI Calculator_DefaultOrganization_20230918110521" > /app/logs/task-output.log 2>&1'
 
 
 docker exec -d chatdev-main-app-1 sh -c 'mkdir -p /app/logs && ls -al > /app/logs/output.log 2>&1'
